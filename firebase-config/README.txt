@@ -1,0 +1,2 @@
+El sdk-firebase-app se tiene que pegar en "Archivo build.gradle de nivel de proyecto (<project>/build.gradle):"
+El sdk2-firebase-app se tiene que pegar en "Archivo build.gradle de nivel de app (<project>/<app-module>/build.gradle):"
