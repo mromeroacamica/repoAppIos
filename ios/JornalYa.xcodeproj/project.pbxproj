@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* PruebaEmuladorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PruebaEmuladorTests.m */; };
+		00E356F31AD99517003FC87E /* JornalYaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* JornalYaTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		9DBC26333CB3D352DA2DC742 /* libPods-PruebaEmulador-PruebaEmuladorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDAFEAE00D3953CCAD49EC9 /* libPods-PruebaEmulador-PruebaEmuladorTests.a */; };
-		C0DB52531ACBFD03BB80F58E /* libPods-PruebaEmulador.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5E1F49D0361AB906B68A5E /* libPods-PruebaEmulador.a */; };
+		9DBC26333CB3D352DA2DC742 /* libPods-JornalYa-JornalYaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDAFEAE00D3953CCAD49EC9 /* libPods-JornalYa-JornalYaTests.a */; };
+		C0DB52531ACBFD03BB80F58E /* libPods-JornalYa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5E1F49D0361AB906B68A5E /* libPods-JornalYa.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,27 +22,27 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = PruebaEmulador;
+			remoteInfo = JornalYa;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* PruebaEmuladorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PruebaEmuladorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* JornalYaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JornalYaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* PruebaEmuladorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PruebaEmuladorTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* PruebaEmulador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PruebaEmulador.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = PruebaEmulador/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = PruebaEmulador/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PruebaEmulador/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PruebaEmulador/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PruebaEmulador/main.m; sourceTree = "<group>"; };
-		33A359329117C740531A1B9E /* Pods-PruebaEmulador.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaEmulador.release.xcconfig"; path = "Target Support Files/Pods-PruebaEmulador/Pods-PruebaEmulador.release.xcconfig"; sourceTree = "<group>"; };
-		4C485639DF740081E2049475 /* Pods-PruebaEmulador.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaEmulador.debug.xcconfig"; path = "Target Support Files/Pods-PruebaEmulador/Pods-PruebaEmulador.debug.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PruebaEmulador/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8CDAFEAE00D3953CCAD49EC9 /* libPods-PruebaEmulador-PruebaEmuladorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PruebaEmulador-PruebaEmuladorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE203CED5840B3915DE2DAAA /* Pods-PruebaEmulador-PruebaEmuladorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaEmulador-PruebaEmuladorTests.release.xcconfig"; path = "Target Support Files/Pods-PruebaEmulador-PruebaEmuladorTests/Pods-PruebaEmulador-PruebaEmuladorTests.release.xcconfig"; sourceTree = "<group>"; };
-		B42551700F442BDEE11AA5CC /* Pods-PruebaEmulador-PruebaEmuladorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaEmulador-PruebaEmuladorTests.debug.xcconfig"; path = "Target Support Files/Pods-PruebaEmulador-PruebaEmuladorTests/Pods-PruebaEmulador-PruebaEmuladorTests.debug.xcconfig"; sourceTree = "<group>"; };
-		BE5E1F49D0361AB906B68A5E /* libPods-PruebaEmulador.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PruebaEmulador.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F21AD99517003FC87E /* JornalYaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JornalYaTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* JornalYa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JornalYa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = JornalYa/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = JornalYa/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = JornalYa/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = JornalYa/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = JornalYa/main.m; sourceTree = "<group>"; };
+		33A359329117C740531A1B9E /* Pods-JornalYa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JornalYa.release.xcconfig"; path = "Target Support Files/Pods-JornalYa/Pods-JornalYa.release.xcconfig"; sourceTree = "<group>"; };
+		4C485639DF740081E2049475 /* Pods-JornalYa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JornalYa.debug.xcconfig"; path = "Target Support Files/Pods-JornalYa/Pods-JornalYa.debug.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = JornalYa/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8CDAFEAE00D3953CCAD49EC9 /* libPods-JornalYa-JornalYaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JornalYa-JornalYaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE203CED5840B3915DE2DAAA /* Pods-JornalYa-JornalYaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JornalYa-JornalYaTests.release.xcconfig"; path = "Target Support Files/Pods-JornalYa-JornalYaTests/Pods-JornalYa-JornalYaTests.release.xcconfig"; sourceTree = "<group>"; };
+		B42551700F442BDEE11AA5CC /* Pods-JornalYa-JornalYaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JornalYa-JornalYaTests.debug.xcconfig"; path = "Target Support Files/Pods-JornalYa-JornalYaTests/Pods-JornalYa-JornalYaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BE5E1F49D0361AB906B68A5E /* libPods-JornalYa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JornalYa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DBC26333CB3D352DA2DC742 /* libPods-PruebaEmulador-PruebaEmuladorTests.a in Frameworks */,
+				9DBC26333CB3D352DA2DC742 /* libPods-JornalYa-JornalYaTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,20 +59,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0DB52531ACBFD03BB80F58E /* libPods-PruebaEmulador.a in Frameworks */,
+				C0DB52531ACBFD03BB80F58E /* libPods-JornalYa.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* PruebaEmuladorTests */ = {
+		00E356EF1AD99517003FC87E /* JornalYaTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* PruebaEmuladorTests.m */,
+				00E356F21AD99517003FC87E /* JornalYaTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = PruebaEmuladorTests;
+			path = JornalYaTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -83,7 +83,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* PruebaEmulador */ = {
+		13B07FAE1A68108700A75B9A /* JornalYa */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -93,15 +93,15 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = PruebaEmulador;
+			name = JornalYa;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				BE5E1F49D0361AB906B68A5E /* libPods-PruebaEmulador.a */,
-				8CDAFEAE00D3953CCAD49EC9 /* libPods-PruebaEmulador-PruebaEmuladorTests.a */,
+				BE5E1F49D0361AB906B68A5E /* libPods-JornalYa.a */,
+				8CDAFEAE00D3953CCAD49EC9 /* libPods-JornalYa-JornalYaTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,10 +109,10 @@
 		76EC4DF600B22BB7B331B05F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4C485639DF740081E2049475 /* Pods-PruebaEmulador.debug.xcconfig */,
-				33A359329117C740531A1B9E /* Pods-PruebaEmulador.release.xcconfig */,
-				B42551700F442BDEE11AA5CC /* Pods-PruebaEmulador-PruebaEmuladorTests.debug.xcconfig */,
-				AE203CED5840B3915DE2DAAA /* Pods-PruebaEmulador-PruebaEmuladorTests.release.xcconfig */,
+				4C485639DF740081E2049475 /* Pods-JornalYa.debug.xcconfig */,
+				33A359329117C740531A1B9E /* Pods-JornalYa.release.xcconfig */,
+				B42551700F442BDEE11AA5CC /* Pods-JornalYa-JornalYaTests.debug.xcconfig */,
+				AE203CED5840B3915DE2DAAA /* Pods-JornalYa-JornalYaTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -128,9 +128,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* PruebaEmulador */,
+				13B07FAE1A68108700A75B9A /* JornalYa */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* PruebaEmuladorTests */,
+				00E356EF1AD99517003FC87E /* JornalYaTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				76EC4DF600B22BB7B331B05F /* Pods */,
@@ -143,8 +143,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* PruebaEmulador.app */,
-				00E356EE1AD99517003FC87E /* PruebaEmuladorTests.xctest */,
+				13B07F961A680F5B00A75B9A /* JornalYa.app */,
+				00E356EE1AD99517003FC87E /* JornalYaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,9 +152,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* PruebaEmuladorTests */ = {
+		00E356ED1AD99517003FC87E /* JornalYaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PruebaEmuladorTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "JornalYaTests" */;
 			buildPhases = (
 				E6490BFFA59FAED986E38F98 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -168,14 +168,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = PruebaEmuladorTests;
-			productName = PruebaEmuladorTests;
-			productReference = 00E356EE1AD99517003FC87E /* PruebaEmuladorTests.xctest */;
+			name = JornalYaTests;
+			productName = JornalYaTests;
+			productReference = 00E356EE1AD99517003FC87E /* JornalYaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* PruebaEmulador */ = {
+		13B07F861A680F5B00A75B9A /* JornalYa */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PruebaEmulador" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "JornalYa" */;
 			buildPhases = (
 				81D08038C92FAACD71187216 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -190,9 +190,9 @@
 			);
 			dependencies = (
 			);
-			name = PruebaEmulador;
-			productName = PruebaEmulador;
-			productReference = 13B07F961A680F5B00A75B9A /* PruebaEmulador.app */;
+			name = JornalYa;
+			productName = JornalYa;
+			productReference = 13B07F961A680F5B00A75B9A /* JornalYa.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -212,7 +212,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "PruebaEmulador" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "JornalYa" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -225,8 +225,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* PruebaEmulador */,
-				00E356ED1AD99517003FC87E /* PruebaEmuladorTests */,
+				13B07F861A680F5B00A75B9A /* JornalYa */,
+				00E356ED1AD99517003FC87E /* JornalYaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -271,15 +271,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PruebaEmulador-PruebaEmuladorTests/Pods-PruebaEmulador-PruebaEmuladorTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-JornalYa-JornalYaTests/Pods-JornalYa-JornalYaTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PruebaEmulador-PruebaEmuladorTests/Pods-PruebaEmulador-PruebaEmuladorTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-JornalYa-JornalYaTests/Pods-JornalYa-JornalYaTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PruebaEmulador-PruebaEmuladorTests/Pods-PruebaEmulador-PruebaEmuladorTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JornalYa-JornalYaTests/Pods-JornalYa-JornalYaTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		81D08038C92FAACD71187216 /* [CP] Check Pods Manifest.lock */ = {
@@ -297,7 +297,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PruebaEmulador-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-JornalYa-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -310,15 +310,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PruebaEmulador/Pods-PruebaEmulador-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-JornalYa/Pods-JornalYa-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PruebaEmulador/Pods-PruebaEmulador-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-JornalYa/Pods-JornalYa-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PruebaEmulador/Pods-PruebaEmulador-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JornalYa/Pods-JornalYa-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A97BD0F2F95D10E97D30BB04 /* [CP] Copy Pods Resources */ = {
@@ -327,15 +327,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PruebaEmulador/Pods-PruebaEmulador-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-JornalYa/Pods-JornalYa-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PruebaEmulador/Pods-PruebaEmulador-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-JornalYa/Pods-JornalYa-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PruebaEmulador/Pods-PruebaEmulador-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JornalYa/Pods-JornalYa-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D2F1D9C6E0FBE06739CCD681 /* [CP] Copy Pods Resources */ = {
@@ -344,15 +344,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PruebaEmulador-PruebaEmuladorTests/Pods-PruebaEmulador-PruebaEmuladorTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-JornalYa-JornalYaTests/Pods-JornalYa-JornalYaTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PruebaEmulador-PruebaEmuladorTests/Pods-PruebaEmulador-PruebaEmuladorTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-JornalYa-JornalYaTests/Pods-JornalYa-JornalYaTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PruebaEmulador-PruebaEmuladorTests/Pods-PruebaEmulador-PruebaEmuladorTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JornalYa-JornalYaTests/Pods-JornalYa-JornalYaTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E6490BFFA59FAED986E38F98 /* [CP] Check Pods Manifest.lock */ = {
@@ -370,7 +370,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PruebaEmulador-PruebaEmuladorTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-JornalYa-JornalYaTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -403,7 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* PruebaEmuladorTests.m in Sources */,
+				00E356F31AD99517003FC87E /* JornalYaTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +421,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* PruebaEmulador */;
+			target = 13B07F861A680F5B00A75B9A /* JornalYa */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -429,14 +429,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B42551700F442BDEE11AA5CC /* Pods-PruebaEmulador-PruebaEmuladorTests.debug.xcconfig */;
+			baseConfigurationReference = B42551700F442BDEE11AA5CC /* Pods-JornalYa-JornalYaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = PruebaEmuladorTests/Info.plist;
+				INFOPLIST_FILE = JornalYaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,17 +450,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PruebaEmulador.app/PruebaEmulador";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JornalYa.app/JornalYa";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE203CED5840B3915DE2DAAA /* Pods-PruebaEmulador-PruebaEmuladorTests.release.xcconfig */;
+			baseConfigurationReference = AE203CED5840B3915DE2DAAA /* Pods-JornalYa-JornalYaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = PruebaEmuladorTests/Info.plist;
+				INFOPLIST_FILE = JornalYaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -474,19 +474,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PruebaEmulador.app/PruebaEmulador";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JornalYa.app/JornalYa";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C485639DF740081E2049475 /* Pods-PruebaEmulador.debug.xcconfig */;
+			baseConfigurationReference = 4C485639DF740081E2049475 /* Pods-JornalYa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = PruebaEmulador/Info.plist;
+				INFOPLIST_FILE = JornalYa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,7 +497,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = PruebaEmulador;
+				PRODUCT_NAME = JornalYa;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -506,12 +506,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33A359329117C740531A1B9E /* Pods-PruebaEmulador.release.xcconfig */;
+			baseConfigurationReference = 33A359329117C740531A1B9E /* Pods-JornalYa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = PruebaEmulador/Info.plist;
+				INFOPLIST_FILE = JornalYa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,7 +522,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = PruebaEmulador;
+				PRODUCT_NAME = JornalYa;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -654,7 +654,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PruebaEmuladorTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "JornalYaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -663,7 +663,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PruebaEmulador" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "JornalYa" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -672,7 +672,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "PruebaEmulador" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "JornalYa" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
