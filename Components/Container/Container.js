@@ -11,10 +11,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {CommonActions} from '@react-navigation/routers';
 
-const ContainerScreen = (props) => {
+const ContainerScreen = props => {
   const {route, setRoute} = useContext(RouteContext);
   const setDocuments = props.setDocuments;
-  const navigateTo = (route) => {
+  const navigateTo = route => {
     props.navigation.dispatch(
       CommonActions.reset({index: 0, routes: [{name: route}]}),
     );
@@ -98,9 +98,10 @@ const styles = StyleSheet.create({
   },
   footerContainer: {
     flexDirection: 'row',
-    height: 50,
+    height: 60,
     backgroundColor: 'white',
     justifyContent: 'space-between',
+    paddingHorizontal: Platform.OS == 'ios' ? 15 : 0,
   },
   iconTextContainer: {
     marginHorizontal: 10,

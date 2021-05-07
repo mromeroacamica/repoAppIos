@@ -8,11 +8,11 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faSpinner} from '@fortawesome/free-solid-svg-icons';
 
 
-export interface PinInputProps {
+export interface SpinnerProps {
     size:number
 }
  
-const SpinnerComponent: React.FC<PinInputProps> = ({size}) => {
+const SpinnerComponent: React.FC<SpinnerProps> = ({size}) => {
    let spinValue = new Animated.Value(0);
 
     // First set up animation 

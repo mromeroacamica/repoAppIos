@@ -1,5 +1,15 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, Text, ScrollView, ActivityIndicator, TextInput, Alert} from 'react-native';
+import {
+  View, 
+  StyleSheet, 
+  Text, 
+  ScrollView, 
+  ActivityIndicator, 
+  TextInput, 
+  Alert,
+  KeyboardAvoidingView,
+  Platform
+} from 'react-native';
 import TokenServices from '../../services/token/TokenServices';
 import AccountServices from '../../services/account/AccountServices';
 import { Colors } from '../../assets/style/Colors';
@@ -200,76 +210,81 @@ const ProfileEdit: React.FC<Props> = ({navigation, setDocuments}) => {
   return (
     <>
         {initLoaded?
-        <View style={styles.profileContainer}>
-          <ScrollView style={styles.scrollProfile}>
-            <View style={{padding:10}}>
-              <Text>Género</Text>
-              {accountGender !== ''?
-                <View style={styles.pickerContainer}>
-                    <Picker
-                    selectedValue={accountGender}
-                    style={styles.picker}
-                    onValueChange={(itemValue) => handlePicker(itemValue)}
-                    >
-                    {genders.map((gender: any)=>{
-                    return(
-                        <Picker.Item key={gender.id} label={gender.name} value={gender} />
-                    )
-                    })}
-                    </Picker>
-                </View>
-            :null}
-                <Text style={styles.label}>Teléfono</Text>
-                <TextInput
-                    style={styles.phoneInput}
-                    keyboardType={'phone-pad'}
-                    onChangeText={(text) => {
-                        setAccountPhone(text)
-                    }}
-                    
-                    value={accountPhone}
-                />
-                <Text style={styles.label}>Correo alternativo</Text>
-                <TextInput
-                    style={styles.phoneInput}
-                    keyboardType={'email-address'}
-                    onChangeText={(text) => {
-                      setAccountAltEmail(text)
-                    }}
-                    
-                    value={accountAltEmail}
-                />
-                <Text style={styles.label}>Fecha nacimiento</Text>
-                <View style={styles.datePicker}>
-                  <TouchableOpacity onPress={showDatePicker}>
-                    <Text>{accountDateBirth !==''? accountDateBirth : 'Seleccionar fecha'}</Text>
-                  </TouchableOpacity>
-                </View>
-                <DateTimePickerModal
-                  isVisible={isDatePickerVisible}
-                  mode="date"
-                  onConfirm={confirmarFecha}
-                  onCancel={hideDatePicker}
-                  locale="es_ES"
-                  headerTextIOS="Elige una Fecha"
-                  cancelTextIOS="Cancelar"
-                  confirmTextIOS="Confirmar"
-                />
-            </View>
-          </ScrollView>
-          <View style={{flexDirection:'row', justifyContent:'space-between', width:'100%', marginTop:10}}>
-                <View style={styles.cancelButton}>
-                    <TouchableOpacity onPress={()=>navigateTo('Profile')}>
-                            <Text>CANCELAR</Text>
+        <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={styles.container}
+        >
+          <View style={styles.profileContainer}>
+            <ScrollView style={styles.scrollProfile}>
+              <View style={{padding:10}}>
+                <Text>Género</Text>
+                {accountGender !== ''?
+                  <View style={styles.pickerContainer}>
+                      <Picker
+                      selectedValue={accountGender}
+                      style={styles.picker}
+                      onValueChange={(itemValue) => handlePicker(itemValue)}
+                      >
+                      {genders.map((gender: any)=>{
+                      return(
+                          <Picker.Item key={gender.id} label={gender.name} value={gender} />
+                      )
+                      })}
+                      </Picker>
+                  </View>
+              :null}
+                  <Text style={styles.label}>Teléfono</Text>
+                  <TextInput
+                      style={styles.phoneInput}
+                      keyboardType={'phone-pad'}
+                      onChangeText={(text) => {
+                          setAccountPhone(text)
+                      }}
+                      
+                      value={accountPhone}
+                  />
+                  <Text style={styles.label}>Correo alternativo</Text>
+                  <TextInput
+                      style={styles.phoneInput}
+                      keyboardType={'email-address'}
+                      onChangeText={(text) => {
+                        setAccountAltEmail(text)
+                      }}
+                      
+                      value={accountAltEmail}
+                  />
+                  <Text style={styles.label}>Fecha nacimiento</Text>
+                  <View style={styles.datePicker}>
+                    <TouchableOpacity onPress={showDatePicker}>
+                      <Text>{accountDateBirth !==''? accountDateBirth : 'Seleccionar fecha'}</Text>
                     </TouchableOpacity>
-                </View>
-            <View style={styles.acceptButton}>
-                <TouchableOpacity onPress={()=>updateAccount()}>
-                        <Text>ACEPTAR</Text>
-                </TouchableOpacity>
-            </View>
-            </View>
-        </View>
+                  </View>
+                  <DateTimePickerModal
+                    isVisible={isDatePickerVisible}
+                    mode="date"
+                    onConfirm={confirmarFecha}
+                    onCancel={hideDatePicker}
+                    locale="es_ES"
+                    headerTextIOS="Elige una Fecha"
+                    cancelTextIOS="Cancelar"
+                    confirmTextIOS="Confirmar"
+                  />
+              </View>
+            </ScrollView>
+            <View style={{flexDirection:'row', justifyContent:'space-between', width:'100%', marginTop:10}}>
+                  <View style={styles.cancelButton}>
+                      <TouchableOpacity onPress={()=>navigateTo('Profile')}>
+                              <Text>CANCELAR</Text>
+                      </TouchableOpacity>
+                  </View>
+              <View style={styles.acceptButton}>
+                  <TouchableOpacity onPress={()=>updateAccount()}>
+                          <Text>ACEPTAR</Text>
+                  </TouchableOpacity>
+              </View>
+              </View>
+          </View>
+        </KeyboardAvoidingView>
       :
         <View style={{flex:1, justifyContent:'center'}}>
             <ActivityIndicator size="large" color={Colors.primary} />
@@ -279,6 +294,9 @@ const ProfileEdit: React.FC<Props> = ({navigation, setDocuments}) => {
   );
 };
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+    },
   profileContainer: {
     alignItems: 'center',
     flex: 1,

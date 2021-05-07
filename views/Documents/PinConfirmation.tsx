@@ -5,7 +5,9 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  Alert
+  Alert,
+  KeyboardAvoidingView,
+  Platform
 } from 'react-native';
 import PinInput from '../../Components/PinInput/PinInput'
 import SignServices from '../../services/sign/sign.services'
@@ -71,30 +73,38 @@ const PinConfirmation : React.FC<Props> = ({route,navigation}) => {
     {showSpinner?
     <SpinnerComponent size={100}/>
     :
-    <View style={styles.login}>
-        <Text style={styles.titleText}>Ingresa tu PIN de 4 digitos</Text>
-        <View style={styles.inputContainer}>
-            <PinInput visiblePassword={showPin} setPinPassword={setPinPassword}/>
-            <View style={styles.buttonShowContainer}>
-              <TouchableOpacity onPress={()=>setShowPin(!showPin)}>
-                <Text style={styles.textShow}>Mostrar</Text>
+    <KeyboardAvoidingView
+    behavior={Platform.OS === "ios" ? "padding" : "height"}
+    style={styles.container}
+    >
+      <View style={styles.login}>
+          <Text style={styles.titleText}>Ingresa tu PIN de 4 digitos</Text>
+          <View style={styles.inputContainer}>
+              <PinInput visiblePassword={showPin} setPinPassword={setPinPassword}/>
+              <View style={styles.buttonShowContainer}>
+                <TouchableOpacity onPress={()=>setShowPin(!showPin)}>
+                  <Text style={styles.textShow}>Mostrar</Text>
+                </TouchableOpacity>
+              </View>
+          </View>
+          <View>
+              <TouchableOpacity
+              disabled={pinPassword == ''}
+              onPress={() => submitPin()}
+              style={[styles.buttonSubmit,pinPassword==''?styles.buttonDisabled:null]}>
+              <Text style={styles.textoButtonSubmit}>FIRMAR</Text>
               </TouchableOpacity>
-            </View>
-        </View>
-        <View>
-            <TouchableOpacity
-            disabled={pinPassword == ''}
-            onPress={() => submitPin()}
-            style={[styles.buttonSubmit,pinPassword==''?styles.buttonDisabled:null]}>
-            <Text style={styles.textoButtonSubmit}>FIRMAR</Text>
-            </TouchableOpacity>
-        </View>
-    </View>
+          </View>
+      </View>
+    </KeyboardAvoidingView>
     }
     </>
   );
 };
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
   login: {
     flex: 1,
     backgroundColor: '#fff',

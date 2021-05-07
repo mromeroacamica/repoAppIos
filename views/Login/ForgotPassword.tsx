@@ -7,7 +7,8 @@ import {
   TextInput,
   TouchableOpacity,
   Platform,
-  Alert
+  Alert,
+  KeyboardAvoidingView,
 } from 'react-native';
 import AccountServices from '../../services/account/AccountServices'
 
@@ -33,29 +34,38 @@ const ForgotPassword : React.FC<Props> = ({navigation}) => {
   
   return (
     <>
-    <View style={styles.login}>
-    <Text style={styles.textDetail}>Ingresa tu correo electrónico y te enviaremos un link para que vuelvas a establecer tu contraseña</Text>
-    <View style={styles.inputContainer}>
-        <Text style={styles.label}>Correo electrónico:</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={(text) => {
-            setEmail(text);
-          }}
-        />
+     <KeyboardAvoidingView
+    behavior={Platform.OS === "ios" ? "padding" : "height"}
+    style={styles.container}
+    >
+      <View style={styles.login}>
+      <Text style={styles.textDetail}>Ingresa tu correo electrónico y te enviaremos un link para que vuelvas a establecer tu contraseña</Text>
+      <View style={styles.inputContainer}>
+          <Text style={styles.label}>Correo electrónico:</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={(text) => {
+              setEmail(text);
+            }}
+          />
+        </View>
+        <View>
+          <TouchableOpacity
+            onPress={() => sendEmail(email)}
+            style={styles.botonSubmit}>
+            <Text style={styles.textoBotonSubmit}>ENVIAR</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      <View>
-        <TouchableOpacity
-          onPress={() => sendEmail(email)}
-          style={styles.botonSubmit}>
-          <Text style={styles.textoBotonSubmit}>ENVIAR</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+
+    </KeyboardAvoidingView>
     </>
   );
 };
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+    },
   login: {
     flex: 1,
     backgroundColor: '#fff',

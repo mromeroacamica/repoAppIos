@@ -5,7 +5,9 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  Alert
+  Alert,
+  KeyboardAvoidingView,
+  Platform
 } from 'react-native';
 import PinInput from '../../Components/PinInput/PinInput'
 
@@ -23,30 +25,38 @@ const SetPin : React.FC<Props> = ({navigation}) => {
   
   return (
     <>
-    <View style={styles.login}>
-        <Text style={styles.titleText}>Configura tu PIN</Text>
-        <Text style={styles.textDetail}>Solo números</Text>
-        <View style={styles.inputContainer}>
-            <PinInput visiblePassword={showPin} setPinPassword={setPinPassword}/>
-            <View style={styles.buttonShowContainer}>
-              <TouchableOpacity onPress={()=>setShowPin(!showPin)}>
-                <Text style={styles.textShow}>Mostrar</Text>
+    <KeyboardAvoidingView
+    behavior={Platform.OS === "ios" ? "padding" : "height"}
+    style={styles.container}
+    >
+      <View style={styles.login}>
+          <Text style={styles.titleText}>Configura tu PIN</Text>
+          <Text style={styles.textDetail}>Solo números</Text>
+          <View style={styles.inputContainer}>
+              <PinInput visiblePassword={showPin} setPinPassword={setPinPassword}/>
+              <View style={styles.buttonShowContainer}>
+                <TouchableOpacity onPress={()=>setShowPin(!showPin)}>
+                  <Text style={styles.textShow}>Mostrar</Text>
+                </TouchableOpacity>
+              </View>
+          </View>
+          <View>
+              <TouchableOpacity
+              disabled={pinPassword == ''}
+              onPress={() => submitPin()}
+              style={[styles.buttonSubmit,pinPassword==''?styles.buttonDisabled:null]}>
+              <Text style={styles.textoButtonSubmit}>ENVIAR</Text>
               </TouchableOpacity>
-            </View>
-        </View>
-        <View>
-            <TouchableOpacity
-            disabled={pinPassword == ''}
-            onPress={() => submitPin()}
-            style={[styles.buttonSubmit,pinPassword==''?styles.buttonDisabled:null]}>
-            <Text style={styles.textoButtonSubmit}>ENVIAR</Text>
-            </TouchableOpacity>
-        </View>
-    </View>
+          </View>
+      </View>
+    </KeyboardAvoidingView>
     </>
   );
 };
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
   login: {
     flex: 1,
     backgroundColor: '#fff',

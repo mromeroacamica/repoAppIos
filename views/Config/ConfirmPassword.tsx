@@ -8,7 +8,8 @@ import {
   TouchableOpacity,
   Platform,
   Alert,
-  ActivityIndicator
+  ActivityIndicator,
+  KeyboardAvoidingView,
 } from 'react-native';
 import AccountServices from '../../services/account/AccountServices'
 import SessionService from '../../services/session/SessionService'
@@ -61,46 +62,54 @@ const ConfirmPasswordConfig : React.FC<Props> = ({route, navigation}) => {
             <ActivityIndicator size="large" color={Colors.primary} />
         </View>
         :
-    <View style={styles.login}>
-      <View style={styles.inputContainer}>
-        <Text style={styles.text}>Ingresa tu contraseña</Text>
-        <Text style={styles.label}>Ingresa tu contraseña</Text>
-        <View style={styles.passwordInputContainer}>
-          <TextInput
-            secureTextEntry={!visiblePassword}
-            style={styles.input}
-            onChangeText={(text) => {
-              savePassword(text.trim());
-            }}
-          />
-          <TouchableOpacity
-            onPress={() => setVisiblePasssword(!visiblePassword)}
-            style={styles.tooglePassword}>
-            <FontAwesomeIcon
-              icon={faEye}
-              style={styles.tooglePasswordText}
-              size={22}
+        <KeyboardAvoidingView
+    behavior={Platform.OS === "ios" ? "padding" : "height"}
+    style={styles.container}
+    >
+      <View style={styles.login}>
+        <View style={styles.inputContainer}>
+          <Text style={styles.text}>Ingresa tu contraseña</Text>
+          <Text style={styles.label}>Ingresa tu contraseña</Text>
+          <View style={styles.passwordInputContainer}>
+            <TextInput
+              secureTextEntry={!visiblePassword}
+              style={styles.input}
+              onChangeText={(text) => {
+                savePassword(text.trim());
+              }}
             />
+            <TouchableOpacity
+              onPress={() => setVisiblePasssword(!visiblePassword)}
+              style={styles.tooglePassword}>
+              <FontAwesomeIcon
+                icon={faEye}
+                style={styles.tooglePasswordText}
+                size={22}
+              />
+            </TouchableOpacity>
+          </View>
+          {wrongPassword ? (
+            <Text>Ingrese correctamente su contraseña</Text>
+          ) : null}
+        </View>
+        <View>
+          <TouchableOpacity
+            onPress={() => validatePassword()}
+            style={styles.botonSubmit}>
+            <Text style={styles.textoBotonSubmit}>ACEPTAR</Text>
           </TouchableOpacity>
         </View>
-        {wrongPassword ? (
-          <Text>Ingrese correctamente su contraseña</Text>
-        ) : null}
-      </View>
-      <View>
-        <TouchableOpacity
-          onPress={() => validatePassword()}
-          style={styles.botonSubmit}>
-          <Text style={styles.textoBotonSubmit}>ACEPTAR</Text>
-        </TouchableOpacity>
-      </View>
 
-    </View>
+      </View>
+    </KeyboardAvoidingView>
         }
     </>
   );
 };
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
   login: {
     flex: 1,
     backgroundColor: '#fff',

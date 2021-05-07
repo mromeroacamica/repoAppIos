@@ -1,5 +1,16 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, Text, TouchableOpacity, TextInput, ScrollView, Alert, ActivityIndicator} from 'react-native';
+import {
+    View, 
+    StyleSheet, 
+    Text, 
+    TouchableOpacity, 
+    TextInput, 
+    ScrollView, 
+    Alert, 
+    ActivityIndicator,
+    KeyboardAvoidingView,
+    Platform
+} from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
   faExclamationCircle, faEye
@@ -85,6 +96,10 @@ const PasswordConfig: React.FC<Props> = ({navigation, setDocuments}) => {
             <ActivityIndicator size="large" color={Colors.primary} />
         </View>
     :
+    <KeyboardAvoidingView
+    behavior={Platform.OS === "ios" ? "padding" : "height"}
+    style={styles.container}
+    >
         <View style={styles.card}>
             <ScrollView style={{flex:1}}>
                 <View style={{alignItems:'center', marginTop:10}}>
@@ -185,12 +200,16 @@ const PasswordConfig: React.FC<Props> = ({navigation, setDocuments}) => {
             </View>)
             :null}
         </View>
+    </KeyboardAvoidingView>
     }
     </View>
     </>
   );
 };
 const styles = StyleSheet.create({
+container: {
+    flex: 1
+    },
 card:{
     paddingHorizontal:10, 
     paddingBottom:15, 
