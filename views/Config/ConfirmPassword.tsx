@@ -9,7 +9,6 @@ import {
   Platform,
   Alert,
   ActivityIndicator,
-  KeyboardAvoidingView,
 } from 'react-native';
 import AccountServices from '../../services/account/AccountServices'
 import SessionService from '../../services/session/SessionService'
@@ -62,10 +61,7 @@ const ConfirmPasswordConfig : React.FC<Props> = ({route, navigation}) => {
             <ActivityIndicator size="large" color={Colors.primary} />
         </View>
         :
-        <KeyboardAvoidingView
-    behavior={Platform.OS === "ios" ? "padding" : "height"}
-    style={styles.container}
-    >
+     
       <View style={styles.login}>
         <View style={styles.inputContainer}>
           <Text style={styles.text}>Ingresa tu contraseña</Text>
@@ -101,7 +97,6 @@ const ConfirmPasswordConfig : React.FC<Props> = ({route, navigation}) => {
         </View>
 
       </View>
-    </KeyboardAvoidingView>
         }
     </>
   );

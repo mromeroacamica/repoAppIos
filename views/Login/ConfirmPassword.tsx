@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   Platform,
   Alert,
-  KeyboardAvoidingView,
 } from 'react-native';
 import AccountServices from '../../services/account/AccountServices'
 import SessionService from '../../services/session/SessionService'
@@ -51,11 +50,6 @@ const ConfirmPassword : React.FC<Props> = ({route, navigation}) => {
   };
   return (
     <>
-    <KeyboardAvoidingView
-    behavior={Platform.OS === "ios" ? "padding" : "height"}
-    style={styles.container}
-    >
-
       <View style={styles.login}>
         <View style={styles.inputContainer}>
           <Text style={styles.text}>Ingresa tu contraseña</Text>
@@ -91,7 +85,6 @@ const ConfirmPassword : React.FC<Props> = ({route, navigation}) => {
         </View>
 
       </View>
-    </KeyboardAvoidingView>
     </>
   );
 };

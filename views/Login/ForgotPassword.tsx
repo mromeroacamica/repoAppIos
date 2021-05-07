@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   Platform,
   Alert,
-  KeyboardAvoidingView,
 } from 'react-native';
 import AccountServices from '../../services/account/AccountServices'
 
@@ -34,10 +33,6 @@ const ForgotPassword : React.FC<Props> = ({navigation}) => {
   
   return (
     <>
-     <KeyboardAvoidingView
-    behavior={Platform.OS === "ios" ? "padding" : "height"}
-    style={styles.container}
-    >
       <View style={styles.login}>
       <Text style={styles.textDetail}>Ingresa tu correo electrónico y te enviaremos un link para que vuelvas a establecer tu contraseña</Text>
       <View style={styles.inputContainer}>
@@ -58,7 +53,6 @@ const ForgotPassword : React.FC<Props> = ({navigation}) => {
         </View>
       </View>
 
-    </KeyboardAvoidingView>
     </>
   );
 };

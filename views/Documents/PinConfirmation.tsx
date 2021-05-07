@@ -6,7 +6,8 @@ import {
   Text,
   TouchableOpacity,
   Alert,
-  KeyboardAvoidingView,
+  TouchableWithoutFeedback,
+  Keyboard,
   Platform
 } from 'react-native';
 import PinInput from '../../Components/PinInput/PinInput'
@@ -73,9 +74,8 @@ const PinConfirmation : React.FC<Props> = ({route,navigation}) => {
     {showSpinner?
     <SpinnerComponent size={100}/>
     :
-    <KeyboardAvoidingView
-    behavior={Platform.OS === "ios" ? "padding" : "height"}
-    style={styles.container}
+    <TouchableWithoutFeedback
+    onPress={Keyboard.dismiss} accessible={false}
     >
       <View style={styles.login}>
           <Text style={styles.titleText}>Ingresa tu PIN de 4 digitos</Text>
@@ -96,7 +96,7 @@ const PinConfirmation : React.FC<Props> = ({route,navigation}) => {
               </TouchableOpacity>
           </View>
       </View>
-    </KeyboardAvoidingView>
+    </TouchableWithoutFeedback>
     }
     </>
   );

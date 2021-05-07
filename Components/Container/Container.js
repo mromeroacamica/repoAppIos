@@ -98,13 +98,13 @@ const styles = StyleSheet.create({
   },
   footerContainer: {
     flexDirection: 'row',
-    height: 60,
+    height: Platform.OS === 'ios' ? 75 : 50,
     backgroundColor: 'white',
     justifyContent: 'space-between',
-    paddingHorizontal: Platform.OS == 'ios' ? 15 : 0,
+    paddingHorizontal: Platform.OS == 'ios' ? 10 : 0,
   },
   iconTextContainer: {
-    marginHorizontal: 10,
+    marginHorizontal: Platform.OS === 'ios' ? 0 : 10,
     marginVertical: 10,
     alignItems: 'center',
     justifyContent: 'center',

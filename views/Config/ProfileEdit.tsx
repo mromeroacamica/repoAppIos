@@ -7,7 +7,6 @@ import {
   ActivityIndicator, 
   TextInput, 
   Alert,
-  KeyboardAvoidingView,
   Platform
 } from 'react-native';
 import TokenServices from '../../services/token/TokenServices';
@@ -210,10 +209,6 @@ const ProfileEdit: React.FC<Props> = ({navigation, setDocuments}) => {
   return (
     <>
         {initLoaded?
-        <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-        style={styles.container}
-        >
           <View style={styles.profileContainer}>
             <ScrollView style={styles.scrollProfile}>
               <View style={{padding:10}}>
@@ -284,7 +279,6 @@ const ProfileEdit: React.FC<Props> = ({navigation, setDocuments}) => {
               </View>
               </View>
           </View>
-        </KeyboardAvoidingView>
       :
         <View style={{flex:1, justifyContent:'center'}}>
             <ActivityIndicator size="large" color={Colors.primary} />

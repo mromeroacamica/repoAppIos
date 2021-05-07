@@ -5,7 +5,6 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  KeyboardAvoidingView,
   Platform,
 } from 'react-native';
 import TenantService from '../../services/tenant/TenantService';
@@ -25,34 +24,30 @@ const UserLogin = ({submitUser}) => {
   };
   return (
     <>
-      <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        style={styles.container}>
-        <View style={styles.inputContainer}>
-          <Text style={styles.text}>Iniciar sesión</Text>
-          <Text style={styles.label}>Correo electrónico:</Text>
-          <TextInput
-            style={styles.input}
-            keyboardType={'email-address'}
-            onChangeText={text => {
-              const textToLowercase = text.toLowerCase();
-              saveUser(textToLowercase);
-            }}
-          />
-        </View>
-        {wrongUser ? (
-          <View>
-            <Text>Ingresar el correo electrónico correctamente.</Text>
-          </View>
-        ) : null}
+      <View style={styles.inputContainer}>
+        <Text style={styles.text}>Iniciar sesión</Text>
+        <Text style={styles.label}>Correo electrónico:</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType={'email-address'}
+          onChangeText={text => {
+            const textToLowercase = text.toLowerCase();
+            saveUser(textToLowercase);
+          }}
+        />
+      </View>
+      {wrongUser ? (
         <View>
-          <TouchableOpacity
-            onPress={() => validateUser()}
-            style={styles.botonSubmit}>
-            <Text style={styles.textoBotonSubmit}>Siguiente</Text>
-          </TouchableOpacity>
+          <Text>Ingresar el correo electrónico correctamente.</Text>
         </View>
-      </KeyboardAvoidingView>
+      ) : null}
+      <View>
+        <TouchableOpacity
+          onPress={() => validateUser()}
+          style={styles.botonSubmit}>
+          <Text style={styles.textoBotonSubmit}>Siguiente</Text>
+        </TouchableOpacity>
+      </View>
     </>
   );
 };

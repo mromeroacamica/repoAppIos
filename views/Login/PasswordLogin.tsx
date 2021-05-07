@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   Platform,
   Alert,
-  KeyboardAvoidingView,
 } from 'react-native';
 import SessionService from '../../services/session/SessionService'
 import TokenServices from '../../services/token/TokenServices';
@@ -60,11 +59,6 @@ const PasswordLogin : React.FC<Props> = ({route, navigation}) => {
   };
   return (
     <>
-    <KeyboardAvoidingView
-    behavior={Platform.OS === "ios" ? "padding" : "height"}
-    style={styles.container}
-    >
-
       <View style={styles.login}>
         <View style={styles.inputContainer}>
           <Text style={styles.userText}>{userName}</Text>
@@ -109,7 +103,6 @@ const PasswordLogin : React.FC<Props> = ({route, navigation}) => {
         </View>
 
       </View>
-    </KeyboardAvoidingView>
     </>
   );
 };
