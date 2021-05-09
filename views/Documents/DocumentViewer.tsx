@@ -156,7 +156,10 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     alignItems:'center'
   },
-  container: {flexGrow:1},
+  container: {
+    flexGrow:1,
+    paddingBottom:Platform.OS === 'ios'?20:0,
+  },
   buttonDisconformity: {
     flexGrow: 1,
     alignItems: 'center',

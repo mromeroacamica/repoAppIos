@@ -42,7 +42,7 @@ const ConfigComponent = ({navigation, setDocuments}) => {
   const logOut = () => {
     const res = TokenServices.setToken(null);
   };
-  const navigateTo = (screen) => {
+  const navigateTo = screen => {
     navigation.navigate(screen);
   };
   return (
@@ -127,11 +127,12 @@ const ConfigComponent = ({navigation, setDocuments}) => {
 };
 const styles = StyleSheet.create({
   namePhotoWrapper: {
-    flex: 1,
-    justifyContent: 'center',
+    display: 'flex',
+    paddingTop: 20,
+    width: '100%',
   },
   secondSection: {
-    flex: 1,
+    // flex: 1,
   },
   iconTextContainer: {
     flexDirection: 'row',
@@ -150,6 +151,10 @@ const styles = StyleSheet.create({
   },
   card2: {
     marginBottom: 30,
+    width: '100%',
+    alignItems: 'center',
+    alignContent: 'center',
+    justifyContent: 'space-between',
   },
 });
 

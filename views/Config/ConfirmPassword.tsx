@@ -109,8 +109,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     justifyContent: 'flex-start',
-    paddingHorizontal: 15,
+    paddingTop: 15,
     paddingVertical: 20,
+    paddingBottom:Platform.OS==='ios'?25:10,
   },
   userText: {
     color: 'grey',

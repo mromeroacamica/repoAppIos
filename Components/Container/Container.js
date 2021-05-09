@@ -93,7 +93,7 @@ const ContainerScreen = props => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Platform.OS === 'ios' ? 40 : 0,
+    paddingTop: Platform.OS === 'ios' ? 20 : 0,
     backgroundColor: '#ece8f8',
   },
   footerContainer: {

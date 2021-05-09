@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     justifyContent: 'flex-start',
-    paddingHorizontal: 15,
+    paddingHorizontal: Platform.OS==='ios'?25:15,
     paddingVertical: 20,
   },
   titleText:{

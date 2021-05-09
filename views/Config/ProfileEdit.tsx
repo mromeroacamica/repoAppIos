@@ -296,7 +296,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop:30,
     paddingHorizontal:15,
-    paddingBottom:8,
+    paddingBottom:Platform.OS==='ios'?25:10,
   },
   scrollProfile:{
     backgroundColor:'white',
