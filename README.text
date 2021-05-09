@@ -1,0 +1,7 @@
+//cuando hay conflictos eliminar las carpetas ios y android y ejecutar estos comandos
+
+npm i react-native-eject
+npm i @react-native-community/cli
+npx react-native eject
+will generate the both android and ios folder
+

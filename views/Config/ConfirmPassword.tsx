@@ -31,7 +31,7 @@ const ConfirmPasswordConfig : React.FC<Props> = ({route, navigation}) => {
   const [password, savePassword] = useState('');
   const [wrongPassword, setWrongPassword] = useState(false);
 
-  const submitPinUpdate = async (password:any) => {
+  const submitPinUpdate = async () => {
     setInProcess(true)
       const currentUser = SessionService.getCurrentUser()
       const accountId = currentUser.account.id
@@ -51,7 +51,7 @@ const ConfirmPasswordConfig : React.FC<Props> = ({route, navigation}) => {
     if (password == '') {
       setWrongPassword(true);
     } else {
-        submitPinUpdate(password);
+        submitPinUpdate();
     }
   };
   return (
