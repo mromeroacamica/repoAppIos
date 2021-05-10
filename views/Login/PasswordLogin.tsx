@@ -43,7 +43,7 @@ const PasswordLogin : React.FC<Props> = ({route, navigation}) => {
     }
   };
   const showAlert = (error:any) => {
-    Alert.alert('Credenciales erroneas', `${error.error.errors[0].detail}`, [
+    Alert.alert('Error', `${error.error.errors[0].detail}`, [
       {text: 'Confirmar', onPress: () => console.log('Close')},
     ]);
   };

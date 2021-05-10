@@ -173,7 +173,7 @@ const DocumentsNotSigned : React.FC<Props>= ({navigation, setDocuments}) => {
             <TouchableOpacity style={styles.buttonConformity} onPress={() => {
             signHandler();
           }}>
-              <Text style={styles.textConformity}>Firmar Masivamente</Text>
+              <Text style={styles.textConformity}>Firmar Seleccionados</Text>
             </TouchableOpacity>
           </View>:null
         }

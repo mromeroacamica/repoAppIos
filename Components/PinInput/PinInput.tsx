@@ -31,8 +31,9 @@ const PinInput: React.FC<PinInputProps> = ({visiblePassword,setPinPassword}) => 
     const changeHandler =(text:string,nextInput:RefObject<TextInput>, prevInput:RefObject<TextInput>)=>{
         if(text===''){
         }else{
-            
-            nextInput.current?.focus()
+            setTimeout(() => {
+                nextInput.current?.focus()
+            }, 300);
         }
     }
 
@@ -171,8 +172,8 @@ const styles = StyleSheet.create({
         fontSize:30,
     },
     visiblePassword:{
-        fontSize:18,
-        color:'black'
+        color:Colors.primary,
+        fontSize:30,
     }
 
 })

@@ -101,10 +101,10 @@ const styles = StyleSheet.create({
     height: Platform.OS === 'ios' ? 75 : 50,
     backgroundColor: 'white',
     justifyContent: 'space-between',
-    paddingHorizontal: Platform.OS == 'ios' ? 10 : 0,
+    paddingHorizontal: Platform.OS == 'ios' ? 10 : 10,
   },
   iconTextContainer: {
-    marginHorizontal: Platform.OS === 'ios' ? 0 : 10,
+    marginHorizontal: Platform.OS === 'ios' ? 0 : 0,
     marginVertical: 10,
     alignItems: 'center',
     justifyContent: 'center',

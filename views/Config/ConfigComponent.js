@@ -70,7 +70,7 @@ const ConfigComponent = ({navigation, setDocuments}) => {
           </TouchableOpacity>
         </View>
         <View style={styles.secondSection}>
-          <TouchableOpacity onPress={() => navigateTo('Notifications')}>
+          {/* <TouchableOpacity onPress={() => navigateTo('Notifications')}>
             <CardList propStyles={styles.card}>
               <View style={styles.iconTextContainer}>
                 <FontAwesomeIcon
@@ -81,7 +81,7 @@ const ConfigComponent = ({navigation, setDocuments}) => {
                 <Text style={styles.text}>Notificaciones</Text>
               </View>
             </CardList>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <TouchableOpacity onPress={() => navigateTo('Credentials')}>
             <CardList propStyles={styles.card2}>
               <View style={styles.iconTextContainer}>
@@ -96,20 +96,8 @@ const ConfigComponent = ({navigation, setDocuments}) => {
           </TouchableOpacity>
         </View>
         <View>
-          <TouchableOpacity onPress={() => showAlert()}>
-            <CardList propStyles={styles.card}>
-              <View style={styles.iconTextContainer}>
-                <FontAwesomeIcon
-                  icon={faSignOutAlt}
-                  style={styles.iconStyle}
-                  size={38}
-                />
-                <Text style={styles.text}>Cerrar sesión</Text>
-              </View>
-            </CardList>
-          </TouchableOpacity>
           <TouchableOpacity onPress={() => navigateTo('Help')}>
-            <CardList propStyles={styles.card2}>
+            <CardList propStyles={styles.card}>
               <View style={styles.iconTextContainer}>
                 <FontAwesomeIcon
                   icon={faInfoCircle}
@@ -117,6 +105,18 @@ const ConfigComponent = ({navigation, setDocuments}) => {
                   size={38}
                 />
                 <Text style={styles.text}>Ayuda</Text>
+              </View>
+            </CardList>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => showAlert()}>
+            <CardList propStyles={styles.card2}>
+              <View style={styles.iconTextContainer}>
+                <FontAwesomeIcon
+                  icon={faSignOutAlt}
+                  style={styles.iconStyle}
+                  size={38}
+                />
+                <Text style={styles.text}>Cerrar sesión</Text>
               </View>
             </CardList>
           </TouchableOpacity>

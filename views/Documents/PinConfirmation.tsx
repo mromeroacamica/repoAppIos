@@ -33,7 +33,7 @@ const PinConfirmation : React.FC<Props> = ({route,navigation}) => {
       const certificate=await SignServices.getCertFile()
       const certPem = await SignServices.getCertPem(pinPassword,certificate)
       if(!certPem){
-        Alert.alert('PIN', 'Se ingresó PIN equivocado.', [
+        Alert.alert('PIN', 'Se ingresó PIN incorrecto.', [
           {text: 'OK', onPress: () => setShowSpinner(false)}
         ])
       }
@@ -55,7 +55,7 @@ const PinConfirmation : React.FC<Props> = ({route,navigation}) => {
         }
         setShowSpinner(false)
         if(documentsSigned>0){
-          Alert.alert('Se firmo correctamente', `Se ha firmado correctamente ${documentsSigned} documento${documentsSigned>1?'.':'s.'}`, [
+          Alert.alert('Se firmó correctamente', `Se ha firmado correctamente ${documentsSigned} documento${documentsSigned>1?'.':'s.'}`, [
               
             {text: 'OK', onPress: () => navigation.navigate('DocumentsNotSigned')},
           ]);

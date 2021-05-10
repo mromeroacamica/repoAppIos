@@ -51,7 +51,7 @@ const Navigation = () => {
   useEffect(() => {
     const tokenGet = TokenServices.getToken();
     setToken(tokenGet);
-    TokenServices.token.attach((value) => {
+    TokenServices.token.attach(value => {
       setToken({...value});
     });
     return () => {
@@ -74,7 +74,7 @@ const Navigation = () => {
             headerRight: () => <NotificationBell />,
           }}
           name="Documentos">
-          {(props) => <DocumentsDashboard {...props} />}
+          {props => <DocumentsDashboard {...props} />}
         </Stack.Screen>
         <Stack.Screen
           options={{
@@ -283,6 +283,10 @@ const Navigation = () => {
           options={({route}) => ({
             title: 'Configurar PIN',
             headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: '#3f51b5',
+            },
+            headerTintColor: '#fff',
           })}
           name="PinConfig"
         />
@@ -291,6 +295,10 @@ const Navigation = () => {
           options={({route}) => ({
             title: 'Configurar PIN',
             headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: '#3f51b5',
+            },
+            headerTintColor: '#fff',
           })}
           name="SetPin"
         />
@@ -299,6 +307,10 @@ const Navigation = () => {
           options={({route}) => ({
             title: 'Confirmar contraseña',
             headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: '#3f51b5',
+            },
+            headerTintColor: '#fff',
           })}
           name="ConfirmPassword"
         />
@@ -308,7 +320,7 @@ const Navigation = () => {
             headerTitleAlign: 'center',
           })}
           name="Password">
-          {(props) => <PasswordLogin {...props} />}
+          {props => <PasswordLogin {...props} />}
         </Stack.Screen>
       </Stack.Navigator>
     );

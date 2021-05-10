@@ -198,14 +198,16 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
   titleText: {
-    fontSize: 18,
+    fontSize: 15,
     alignItems: 'flex-start',
-    color:'grey'
+    color:'grey',
+    fontWeight:'bold'
   },
   bodyText: {
-    fontSize:15,
+    fontSize:22,
     borderBottomColor:Colors.background,
     borderBottomWidth:2,
+    color:'black'
   },
   iconTextContainer: {
     flexDirection: 'row',
@@ -213,7 +215,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 26,
-    color: 'grey',
+    color: 'black',
   },
   iconStyle: {
     color: '#3f51b5',

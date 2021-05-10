@@ -27,6 +27,8 @@ export interface Props{
 
 const PasswordConfig: React.FC<Props> = ({navigation, setDocuments}) => {
     const [visiblePassword, setVisiblePassword] = useState(false) ;
+    const [visibleNewPassword, setVisibleNewPassword] = useState(false) ;
+    const [visibleConfirmPassword, setVisibleConfirmPassword] = useState(false) ;
     const [oldPassword, setOldPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -111,7 +113,7 @@ const PasswordConfig: React.FC<Props> = ({navigation, setDocuments}) => {
                         <Text>La contraseña debe contener entre 6 y 15 caracteres, al menos una letra mayúscula, una minúscula y un número.</Text>
                     </View>
                     <View style={{marginTop:30}}>
-                        <Text style={styles.label}>Contraseña</Text>
+                        <Text style={styles.label}>Contraseña actual</Text>
                         <View style={styles.inputWrapper}>
                             <TextInput
                                 secureTextEntry={!visiblePassword}
@@ -137,7 +139,7 @@ const PasswordConfig: React.FC<Props> = ({navigation, setDocuments}) => {
                         <Text style={styles.label}>Contraseña nueva</Text>
                         <View style={styles.inputWrapper}>
                             <TextInput
-                                secureTextEntry={!visiblePassword}
+                                secureTextEntry={!visibleNewPassword}
                                 style={styles.passwordInput}
                                 placeholder={'**************'}
                                 onChangeText={(text) => {
@@ -147,7 +149,7 @@ const PasswordConfig: React.FC<Props> = ({navigation, setDocuments}) => {
                                 
                                 value={newPassword}
                             />
-                            <TouchableOpacity onPress={()=>setVisiblePassword(!visiblePassword)}>
+                            <TouchableOpacity onPress={()=>setVisibleNewPassword(!visibleNewPassword)}>
                                 <FontAwesomeIcon
                                     icon={faEye}
                                     style={styles.iconEye}
@@ -160,7 +162,7 @@ const PasswordConfig: React.FC<Props> = ({navigation, setDocuments}) => {
                         <Text style={styles.label}>Confirmar contraseña</Text>
                         <View style={styles.inputWrapper}>
                             <TextInput
-                                secureTextEntry={!visiblePassword}
+                                secureTextEntry={!visibleConfirmPassword}
                                 style={styles.passwordInput}
                                 placeholder={'**************'}
                                 onChangeText={(text) => {
@@ -170,7 +172,7 @@ const PasswordConfig: React.FC<Props> = ({navigation, setDocuments}) => {
                                 
                                 value={confirmPassword}
                             />
-                            <TouchableOpacity onPress={()=>setVisiblePassword(!visiblePassword)}>
+                            <TouchableOpacity onPress={()=>setVisibleConfirmPassword(!visibleConfirmPassword)}>
                                 <FontAwesomeIcon
                                     icon={faEye}
                                     style={styles.iconEye}
@@ -233,11 +235,11 @@ title:{
 warningWrapper:{
     flexDirection:'row',
     alignItems:'center',
-    paddingHorizontal:20
+    paddingHorizontal:Platform.OS === 'ios'?20:30,
 },
 iconStyle: {
     color: 'red',
-    marginRight:10
+    marginRight:0
 },
 iconEye: {
     color: 'grey',
