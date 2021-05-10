@@ -5,6 +5,7 @@ import {
   Text,
   TouchableOpacity,
   ScrollView,
+  Alert
 } from 'react-native';
 import ProcedureServices from '../../services/procedure/ProcedureServices';
 import ContainerScreen from '../../Components/Container/Container';
@@ -14,6 +15,7 @@ import {faFileAlt} from '@fortawesome/free-solid-svg-icons';
 import SessionService from '../../services/session/SessionService';
 import RoundCheck from '../../Components/RoundCheck/RoundCheck';
 import SpinnerComponent from '../../Components/Spinner/Spinner.component';
+import EmptyStatus from '../../Components/EmptyStatus/EmptyStatus';
 
 export interface Props{
   navigation:any,
@@ -22,6 +24,7 @@ export interface Props{
 
 const DocumentsNotSigned : React.FC<Props>= ({navigation, setDocuments}) => {
   const [initLoaded, setInitLoaded] = useState(false);
+  const [emptyStatus, setEmptyStatus] = useState(false);
   const [receipts, setReceipts] = useState<any[]>([]);
   const [checkedIdList, setCheckedIdList] = useState<any[]>([])
   const [multiSelect, setMultiSelect] = useState(false)
@@ -100,15 +103,26 @@ const DocumentsNotSigned : React.FC<Props>= ({navigation, setDocuments}) => {
       const filter = `&filter[documentState]=IN_PROCESS&filter[roleId]=${roleId}`;
       async function initDocumentNotSigned() {
         const res = await ProcedureServices.getProcedures(filter, 0, 0);
-        if (isMounted && res.length > 0) {
-          for (let document of res) {
-            document.selected = false;
+        if(res.status === 200){
+          if (isMounted && res.data.length > 0) {
+            for (let document of res.data) {
+              document.selected = false;
+            }
+            res.data[0].disabled = false
+            setReceipts(res.data);
           }
-          res[0].disabled = false
-          setReceipts(res);
+          if(res.data.length === 0){
+            setEmptyStatus(true)
+          }
           setInitLoaded(true);
+        }else{
+          Alert.alert('Error', 'Hubo un error al consultar la información. Revise su conexión a internet.', [
+            {
+              text: 'OK',
+              onPress: () => navigation.navigate('Documentos'),
+            },
+          ]);
         }
-        
       }
       initDocumentNotSigned();
       return () => {
@@ -125,6 +139,10 @@ const DocumentsNotSigned : React.FC<Props>= ({navigation, setDocuments}) => {
       <SpinnerComponent size={100}/>   
     :
       <ContainerScreen navigation={navigation} setDocuments={setDocuments}>
+        {
+          emptyStatus?
+          <EmptyStatus subtitle={'No hay documentos pendientes de firmar.'}/>
+          :
         <View style={styles.cardContainer}>
           <ScrollView>
             {receipts.map((value:any, index:any) => {
@@ -152,7 +170,7 @@ const DocumentsNotSigned : React.FC<Props>= ({navigation, setDocuments}) => {
                             size={38}
                           />
                         }
-                        <Text style={styles.text}>
+                        <Text style={styles.text} numberOfLines={1} >
                           {value.processDefinitionName}
                           {value.attributes.visibleInView ? ':' : null}{' '}
                           {value.attributes.visibleInView}
@@ -168,6 +186,8 @@ const DocumentsNotSigned : React.FC<Props>= ({navigation, setDocuments}) => {
             })}
           </ScrollView>
         </View>
+
+        }
         {multiSelect && checkedIdList.length>0?
           <View>
             <TouchableOpacity style={styles.buttonConformity} onPress={() => {
@@ -215,6 +235,7 @@ const styles = StyleSheet.create({
   iconTextContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    maxWidth:'92%'
   },
   iconStyle: {
     color: '#3f51b5',

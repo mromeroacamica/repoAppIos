@@ -7,7 +7,16 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "set:env:prod": "cp ./config/env/prod.js ./config/env/environment.js",
+    "set:env:test": "cp ./config/env/test.js ./config/env/environment.js",
+    "set:env:dev": "cp ./config/env/dev.js ./config/env/environment.js",
+    "run:android:prod": "npm run set:env:prod && npm run android",
+    "run:android:test": "npm run set:env:test && npm run android",
+    "run:android:dev": "npm run set:env:dev && npm run android",
+    "run:ios:prod": "npm run set:env:prod && npm run ios",
+    "run:ios:dev": "npm run set:env:dev && npm run ios",
+    "run:ios:test": "npm run set:env:test && npm run ios"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",

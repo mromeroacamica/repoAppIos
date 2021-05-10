@@ -88,12 +88,15 @@ class ProcedureServices {
         procedureItem.processDefinitionName = objectFound2.attributes.name;
         procedureItem.disabled = true;
       }
-      return res.data.data;
+      return {
+        data: res.data.data,
+        status: res.status,
+      };
     } else {
       return {
         data: response,
         total: response.length,
-        error: res.status,
+        status: res.status,
       };
     }
   }

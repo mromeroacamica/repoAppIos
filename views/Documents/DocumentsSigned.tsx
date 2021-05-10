@@ -5,6 +5,7 @@ import {
   Text,
   TouchableOpacity,
   ScrollView,
+  Alert
 } from 'react-native';
 import ProcedureServices from '../../services/procedure/ProcedureServices';
 import ContainerScreen from '../../Components/Container/Container';
@@ -13,6 +14,8 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faFileAlt} from '@fortawesome/free-solid-svg-icons';
 import SessionService from '../../services/session/SessionService';
 import RoundCheck from '../../Components/RoundCheck/RoundCheck';
+import SpinnerComponent from '../../Components/Spinner/Spinner.component';
+import EmptyStatus from '../../Components/EmptyStatus/EmptyStatus';
 
 export interface Props{
   navigation:any,
@@ -20,6 +23,8 @@ export interface Props{
 }
 
 const DocumentsSigned : React.FC<Props>= ({navigation, setDocuments}) => {
+  const [initLoaded, setInitLoaded] = useState(false);
+  const [emptyStatus, setEmptyStatus] = useState(false);
   const [receipts, setReceipts] = useState<any[]>([]);
   const [checkedIdList, setCheckedIdList] = useState<any[]>([])
   const [multiSelect, setMultiSelect] = useState(false)
@@ -66,13 +71,26 @@ const DocumentsSigned : React.FC<Props>= ({navigation, setDocuments}) => {
     const filter = `&filter[documentState]=FINISHED&filter[roleId]=${roleId}&sort=-creationDate`;
     async function initDocumentNotSigned() {
       const res = await ProcedureServices.getProcedures(filter, 0, 0);
-      if (isMounted && res.length > 0) {
-        for (let document of res) {
-          document.selected = false;
-          document.disabled = false;
+      if(res.status === 200){
+        setInitLoaded(true);
+        if (isMounted && res.data.length > 0) {
+          for (let document of res.data) {
+            document.selected = false;
+            document.disabled = false;
+          }
+          res.data[0].disabled = false
+          setReceipts(res.data);
         }
-        res[0].disabled = false
-        setReceipts(res);
+        if(res.data.length === 0){
+          setEmptyStatus(true)
+        }
+      }else{
+        Alert.alert('Error', 'Hubo un error al consultar la información. Revise su conexión a internet.', [
+          {
+            text: 'OK',
+            onPress: () => navigation.navigate('Documentos'),
+          },
+        ]);
       }
     }
     initDocumentNotSigned();
@@ -107,60 +125,66 @@ const DocumentsSigned : React.FC<Props>= ({navigation, setDocuments}) => {
 
   return (
     <>
+    {!initLoaded?
+    <SpinnerComponent size={100}/>:
       <ContainerScreen navigation={navigation} setDocuments={setDocuments}>
-        <View style={styles.cardContainer}>
-          <ScrollView>
-            {receipts.map((value:any, index:any) => {
-              return (
-                <View key={index}>
-                  <TouchableOpacity
-                    onLongPress={() => {
-                      longPressHandler(value.selected, index);
-                    }}
-                    delayLongPress={800}
-                    onPress={() =>
-                      viewDocument(value, index)
-                    } 
-                    disabled={value.disabled}>
-                    <CardList disabled={value.disabled}>
-                      <View
-                        style={[
-                          styles.iconTextContainer,]}>
-                          {value.selected?
-                          <RoundCheck/>
-                          :
-                          <FontAwesomeIcon
-                            icon={faFileAlt}
-                            style={styles.iconStyle}
-                            size={38}
-                          />
-                        }
-                        <Text style={styles.text}>
-                          {value.processDefinitionName}
-                          {value.attributes.visibleInView ? ':' : null}{' '}
-                          {value.attributes.visibleInView}
-                        </Text>
+        {emptyStatus?
+        <EmptyStatus subtitle={'No hay documentos firmados.'}/>:
+              <View style={styles.cardContainer}>
+                <ScrollView>
+                  {receipts.map((value:any, index:any) => {
+                    return (
+                      <View key={index}>
+                        <TouchableOpacity
+                          onLongPress={() => {
+                            longPressHandler(value.selected, index);
+                          }}
+                          delayLongPress={800}
+                          onPress={() =>
+                            viewDocument(value, index)
+                          } 
+                          disabled={value.disabled}>
+                          <CardList disabled={value.disabled}>
+                            <View
+                              style={[
+                                styles.iconTextContainer,]}>
+                                {value.selected?
+                                <RoundCheck/>
+                                :
+                                <FontAwesomeIcon
+                                  icon={faFileAlt}
+                                  style={styles.iconStyle}
+                                  size={38}
+                                />
+                              }
+                              <Text style={styles.text} numberOfLines={1}>
+                                {value.processDefinitionName}
+                                {value.attributes.visibleInView ? ':' : null}{' '}
+                                {value.attributes.visibleInView}
+                              </Text>
+                            </View>
+                            <View style={[value.attributes.conformity?styles.count:styles.countDisconforme]}>
+                              <Text style={styles.countText}></Text>
+                            </View>
+                          </CardList>
+                        </TouchableOpacity>
                       </View>
-                      <View style={[value.attributes.conformity?styles.count:styles.countDisconforme]}>
-                        <Text style={styles.countText}></Text>
-                      </View>
-                    </CardList>
-                  </TouchableOpacity>
-                </View>
-              );
-            })}
-          </ScrollView>
-        </View>
-        {multiSelect?
-          <View>
-            <TouchableOpacity style={styles.buttonConformity} onPress={() => {
-            DownloadHandler();
-          }}>
-              <Text style={styles.textConformity}>Descargar Masivamente</Text>
-            </TouchableOpacity>
-          </View>:null
+                    );
+                  })}
+                </ScrollView>
+              </View>
         }
-      </ContainerScreen>
+              {multiSelect?
+                <View>
+                  <TouchableOpacity style={styles.buttonConformity} onPress={() => {
+                  DownloadHandler();
+                }}>
+                    <Text style={styles.textConformity}>Descargar Masivamente</Text>
+                  </TouchableOpacity>
+                </View>:null
+              }
+        </ContainerScreen>
+        }
     </>
   );
 };
@@ -197,6 +221,7 @@ const styles = StyleSheet.create({
   iconTextContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    maxWidth:'92%'
   },
   iconStyle: {
     color: '#3f51b5',

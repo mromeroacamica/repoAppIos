@@ -1,6 +1,6 @@
 const config = {
   production: false,
-  baseUrl: 'https://sbox-dev.boxcustodia.com',
+  baseUrl: 'https://sbox-demo.boxcustodia.com',
   tenant: 'signbox',
   version: '1.0.0',
   tokenUrl: 'http://localhost:64269/',
